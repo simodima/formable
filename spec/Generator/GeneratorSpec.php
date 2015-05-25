@@ -30,7 +30,6 @@ class GeneratorSpec extends ObjectBehavior
             'form',
             null,
             [
-                'csrf_protection' => false,
                 'data_class'      => 'stdClass'
             ]
         )->willReturn($formBuilder);
@@ -73,6 +72,6 @@ class GeneratorSpec extends ObjectBehavior
             $formable
         );
 
-        $this->generate(new TestDTO());
+        $this->generate(new TestDTO(), ['csrf_protection' => false]);
     }
 }

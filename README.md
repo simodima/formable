@@ -14,7 +14,7 @@ This Bundle allows you to describe DTOs and define its validation rules.
  
 ## Example
 
-Create your DTO
+### The Data Transfer Object
 
 ```php
 
@@ -57,6 +57,21 @@ class PublishPostCommand
     public $date;
 }
 
+```
+
+### The Controller
+
+```php
+
+public function publishAction(Request $request)
+{
+    $form = $this->get('trt.formable')->generate(new PublishPostCommand);
+    $form->submit($request->request->all());
+    
+    if ($form->isValid()) {
+        ...
+    }
+}
 ```
 
 ## Run tests

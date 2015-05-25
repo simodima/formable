@@ -25,22 +25,20 @@ class Generator
 
     /**
      * @param  mixed $originalObject
+     * @param  array $options
      *
      * @return Form
      *
      * @throws FormGeneratorException
      */
-    public function generate($originalObject)
+    public function generate($originalObject, $options = [])
     {
         $recognizedFields = 0;
         $reflectionObject = new \ReflectionObject($originalObject);
         $formBuilder = $this->factory->createBuilder(
             'form',
             null,
-            [
-                'csrf_protection' => false,
-                'data_class'      => $reflectionObject->name
-            ]
+            array_merge(['data_class' => $reflectionObject->name], $options)
         );
 
         foreach ($reflectionObject->getProperties() as $reflectionProperty) {
