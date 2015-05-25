@@ -1,0 +1,22 @@
+{
+    "name": "trt/annotate-form",
+    "description": "The Symfony Form Generator",
+    "type": "Bundle",
+    "autoload": {
+        "psr-4" : { "Formable\\": "src", "spec\\Formable\\": "spec" }
+    },
+    "require": {
+        "symfony/form": "^2.6",
+        "symfony/framework-bundle": "^2.6"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Simone Di Maulo",
+            "email": "toretto460@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpspec/phpspec": "^2.2"
+    }
+}
