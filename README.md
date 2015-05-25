@@ -18,25 +18,25 @@ This Bundle allows you to describe DTOs and define its validation rules.
 
 ```php
 
-use AppBundle\Controller\FormFieldDefinition;
+use Formable\Annotation\Formable;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class PublishPostCommand
 {
     /**
-     * @FormFieldDefinition(name="title", dataType="text")
+     * @Formable(name="title", dataType="text")
      *
      * @Assert\Length(max=250)
      */
     public $title;
 
     /**
-     * @FormFieldDefinition(name="content", dataType="text")
+     * @Formable(name="content", dataType="text")
      */
     public $content;
 
     /**
-     * @FormFieldDefinition(name="tags", dataType="collection", options={
+     * @Formable(name="tags", dataType="collection", options={
      *   "type"="text",
      *   "allow_add"=true
      * })
@@ -49,7 +49,7 @@ class PublishPostCommand
     public $tags;
 
     /**
-     * @FormFieldDefinition(name="date", dataType="date", options={
+     * @Formable(name="date", dataType="date", options={
      *   "widget"="single_text",
      *   "format"="yyyy-M-d"
      * })
