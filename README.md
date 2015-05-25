@@ -8,12 +8,15 @@ Because the cleanest way to transfer data from a web request to the domain is by
 
 This Bundle allows you to describe DTOs and define its validation rules. 
 
+## Installation
+ 
+ ...
+ 
 ## Example
 
 Create your DTO
 
-
-```
+```php
 
 use AppBundle\Controller\FormFieldDefinition;
 use Symfony\Component\Validator\Constraints as Assert;
