@@ -8,7 +8,7 @@
 
 namespace spec\Formable\Generator;
 
-use Formable\Annotation\Formable;
+use Formable\Definition\Formable;
 
 class TestDTO
 {
