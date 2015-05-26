@@ -1,5 +1,7 @@
 # Formable Symfony Bundle
 
+[![Latest Stable Version](https://poser.pugx.org/trt/formable/v/stable)](https://packagist.org/packages/trt/formable) [![Total Downloads](https://poser.pugx.org/trt/formable/downloads)](https://packagist.org/packages/trt/formable) [![Latest Unstable Version](https://poser.pugx.org/trt/formable/v/unstable)](https://packagist.org/packages/trt/formable) [![License](https://poser.pugx.org/trt/formable/license)](https://packagist.org/packages/trt/formable)
+
 # Why?
 
 Because the cleanest way to transfer data from a web request to the domain is by using DTOs.
