@@ -1,5 +1,5 @@
 {
-    "name": "trt/annotate-form",
+    "name": "trt/formable",
     "description": "The Symfony Form Generator",
     "type": "Bundle",
     "autoload": {
