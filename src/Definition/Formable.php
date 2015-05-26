@@ -1,11 +1,11 @@
 <?php
 
-namespace Formable\Annotation;
+namespace Formable\Definition;
 
 
 /**
  * Class Formable
- * @package Formable\Annotation\Formable
+ * @package Formable\Definition\Formable
  *
  * @Annotation
  */

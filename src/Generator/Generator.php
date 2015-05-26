@@ -11,7 +11,7 @@ class Generator
 {
     private $reader;
     private $factory;
-    private $annotationClass = 'Formable\\Generator\\Annotation\\Formable';
+    private $annotationClass = 'Formable\\Definition\\Formable';
 
     /**
      * @param Reader $reader

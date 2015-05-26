@@ -16,7 +16,7 @@ This Bundle allows you to describe DTOs and define its validation rules.
 
 ```php
 
-use Formable\Annotation\Formable;
+use Formable\Definition\Formable;
 use Symfony\Component\Validator\Constraints as Assert;
 
 class PublishPostCommand

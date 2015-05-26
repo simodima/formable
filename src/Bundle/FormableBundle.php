@@ -2,6 +2,7 @@
 
 namespace Formable\Bundle;
 
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class FormableBundle
+class FormableBundle extends Bundle
 {}

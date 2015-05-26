@@ -3,7 +3,7 @@
 namespace spec\Formable\Generator;
 
 use Doctrine\Common\Annotations\Reader;
-use Formable\Annotation\Formable;
+use Formable\Definition\Formable;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 use Symfony\Component\Form\Form;
@@ -68,7 +68,7 @@ class GeneratorSpec extends ObjectBehavior
         $formable->getOptions()->willReturn([]);
 
         $property = new \ReflectionProperty('spec\Formable\Generator\TestDTO', 'name');
-        $reader->getPropertyAnnotation($property, 'Formable\\Generator\\Annotation\\Formable')->willReturn(
+        $reader->getPropertyAnnotation($property, 'Formable\\Definition\\Formable')->willReturn(
             $formable
         );
 
