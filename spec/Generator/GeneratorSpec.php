@@ -72,6 +72,8 @@ class GeneratorSpec extends ObjectBehavior
             $formable
         );
 
-        $this->generate(new TestDTO(), ['csrf_protection' => false]);
+        $this->generate(new TestDTO(), ['csrf_protection' => false])
+            ->shouldReturnAnInstanceOf('\Symfony\Component\Form\Form')
+        ;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Formable;
+namespace Formable\Bundle;
 
 
 class FormableBundle

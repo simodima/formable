@@ -1,4 +1,4 @@
-# Formable Bundle
+# Formable Symfony Bundle
 
 # Why?
 
@@ -8,10 +8,6 @@ Because the cleanest way to transfer data from a web request to the domain is by
 
 This Bundle allows you to describe DTOs and define its validation rules. 
 
-## Installation
- 
- ...
- 
 ## Example
 
 ### The Data Transfer Object
@@ -71,6 +67,28 @@ public function publishAction(Request $request)
     if ($form->isValid()) {
         ...
     }
+}
+```
+
+## Installation
+ 
+`composer require trt/formable`
+
+```php
+// Register the Bundle
+
+class AppKernel extends Kernel
+{
+    public function registerBundles()
+    {
+        $bundles = array(
+            ...
+            new \Formable\Bundle\FormableBundle(),
+        );
+
+        return $bundles;
+    }
+
 }
 ```
 
