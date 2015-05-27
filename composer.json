@@ -6,9 +6,9 @@
         "psr-4" : { "Formable\\": "src", "spec\\Formable\\": "spec" }
     },
     "require": {
-        "symfony/form": "^2.6",
-        "symfony/framework-bundle": "^2.6",
-        "symfony/validator": "^2.6"
+        "symfony/form": "^2.3",
+        "symfony/framework-bundle": "^2.3",
+        "symfony/validator": "^2.3"
     },
     "license": "MIT",
     "authors": [
