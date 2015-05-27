@@ -4,11 +4,12 @@
 
 # Why?
 
-Because the cleanest way to transfer data from a web request to the domain is by using DTOs.
- 
+Because the cleanest way to transfer data from a web request to the domain is by using DTOs. 
+For simple DTOs Symfony forces you to create 2 classes, the `FormType` class and the `SomethingDTO` class.
+
 # How?
 
-This Bundle allows you to describe DTOs and define its validation rules. 
+This Bundle allows you to describe DTOs by the annotation `@Formable()`. Let's see an example. 
 
 ## Example
 
@@ -82,6 +83,26 @@ public function publishAction(Request $request)
         ...
     }
 }
+```
+## The annotation in depth
+
+The `@Formable()` annotation follows the `Symfony\Component\Form\FormBuilderInterface` interface.
+
+
+**ARGUMENTS**: 
+
+- **name**: [_string_] the field name
+- **dataType**: [_string_] the [FormType](http://symfony.com/doc/current/reference/forms/types.html)
+- **options**: [_array_] the FormType options
+
+```php
+    /**
+     * @Formable(name="date", dataType="date", options={
+     *   "format"= IntlDateFormatter::MEDIUM,
+     *   "days" = {1,2,3,4}
+     * })
+     */
+    public $date;
 ```
 
 ## Installation
