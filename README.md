@@ -60,7 +60,7 @@ class PublishPostCommand
 
 ### Embedded DTOs
 
-```
+```php
     /**
      * @var
      *
