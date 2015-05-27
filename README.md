@@ -57,6 +57,18 @@ class PublishPostCommand
 
 ```
 
+### Embedded DTOs
+
+```
+    /**
+     * @var
+     *
+     * @Formable(name="moneyDTO", class="Formable\Tests\Integration\DTOs\TestMoneyDTO")
+     */
+    public $moneyDTO;
+```
+
+
 ### The Controller
 
 ```php
@@ -96,4 +108,4 @@ class AppKernel extends Kernel
 
 ## Run tests
 
-`vendor/bin/phpspec run`
+`bin/test`

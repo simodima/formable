@@ -1,2 +1,4 @@
 vendor
 composer.lock
+src/Tests/Kernel/cache
+src/Tests/Kernel/logs

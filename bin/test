@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vendor/bin/phpspec run
+vendor/bin/phpunit

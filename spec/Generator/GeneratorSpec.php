@@ -28,7 +28,7 @@ class GeneratorSpec extends ObjectBehavior
         $this->beConstructedWith($reader, $factory);
         $factory->createBuilder(
             'form',
-            null,
+            (new \ReflectionClass('stdClass'))->newInstanceWithoutConstructor(),
             [
                 'data_class'      => 'stdClass'
             ]
@@ -53,7 +53,7 @@ class GeneratorSpec extends ObjectBehavior
         $this->beConstructedWith($reader, $factory);
         $factory->createBuilder(
             'form',
-            null,
+            (new \ReflectionClass('spec\Formable\Generator\TestDTO'))->newInstanceWithoutConstructor(),
             [
                 'csrf_protection' => false,
                 'data_class'      => 'spec\Formable\Generator\TestDTO'
@@ -66,6 +66,7 @@ class GeneratorSpec extends ObjectBehavior
         $formable->getName()->willReturn('name');
         $formable->getDataType()->willReturn('text');
         $formable->getOptions()->willReturn([]);
+        $formable->getClass()->willReturn(null);
 
         $property = new \ReflectionProperty('spec\Formable\Generator\TestDTO', 'name');
         $reader->getPropertyAnnotation($property, 'Formable\\Definition\\Formable')->willReturn(

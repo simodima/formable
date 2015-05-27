@@ -14,6 +14,7 @@ class Formable
     private $name;
     private $options = [];
     private $dataType = 'text';
+    private $class;
 
     public function __construct($options)
     {
@@ -39,5 +40,10 @@ class Formable
     public function getOptions()
     {
         return $this->options;
+    }
+
+    public function getClass()
+    {
+        return $this->class;
     }
 }

@@ -1,0 +1,23 @@
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+    #esi:             ~
+    #translator:      { fallback: "%locale%" }
+    secret:          "secret"
+    router:
+        resource: ''
+        strict_requirements: ~
+    form:            ~
+    csrf_protection: false
+    validation:      { enable_annotations: true }
+    templating:
+        engines: ['php']
+        #assets_version: SomeVersionScheme
+    default_locale:  "en"
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    fragments:       ~
+    http_method_override: true
