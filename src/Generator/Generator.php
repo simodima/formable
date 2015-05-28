@@ -36,43 +36,28 @@ class Generator
     public function generate($originalObject, $options = [])
     {
         $reflectionObject = new \ReflectionClass($originalObject);
-        $formBuilder = $this->createFormBuilderForObject($reflectionObject, $options);
+        $baseBuilder = $this->factory->createBuilder(
+            'form',
+            $reflectionObject->newInstanceWithoutConstructor(),
+            array_merge(['data_class' => $reflectionObject->name], $options)
+        );
+
+        $formBuilder = $this->createFormBuilderForObject($reflectionObject, $baseBuilder);
 
         return $formBuilder->getForm();
     }
 
     /**
      * @param \ReflectionClass     $reflectionObject
-     * @param array                $options
-     * @param String               $name
-     * @param mixed                $data
-     * @param FormBuilderInterface $previousFormBuilder
+     * @param FormBuilderInterface $formBuilder
      *
-     * @return \Symfony\Component\Form\FormBuilderInterface
+     * @return FormBuilderInterface
      *
      * @throws FormGeneratorException
      */
-    private function createFormBuilderForObject(
-        \ReflectionClass $reflectionObject,
-        $options = [],
-        $name = 'form',
-        $data = null,
-        FormBuilderInterface $previousFormBuilder = null
-    )
+    private function createFormBuilderForObject(\ReflectionClass $reflectionObject, FormBuilderInterface $formBuilder)
     {
         $recognizedFields = 0;
-        $data = is_null($data) ? $reflectionObject->newInstanceWithoutConstructor() : $data;
-        $opt = array_merge(['data_class' => $reflectionObject->name], $options);
-
-        if ($previousFormBuilder == null) {
-            $formBuilder = $this->factory->createBuilder(
-                $name,
-                $data,
-                $opt
-            );
-        } else {
-            $formBuilder = $previousFormBuilder->create($name, null, $opt);
-        }
 
         foreach ($reflectionObject->getProperties() as $reflectionProperty) {
             /** @var Formable $annotation */
@@ -82,16 +67,14 @@ class Generator
                 ++$recognizedFields;
 
                 if ($class = $annotation->getClass()) {
-                    $mappedObject = new \ReflectionClass($class);
+
                     $formBuilder->add(
                         $this->createFormBuilderForObject(
-                            $mappedObject,
-                            array_merge($annotation->getOptions(), ['compound' => true]),
-                            $annotation->getName(),
-                            $mappedObject->newInstanceWithoutConstructor(),
-                            $formBuilder
+                            new \ReflectionClass($class),
+                            $formBuilder->create($annotation->getName(), null, ['compound' => true, 'data_class' => $class])
                         )
                     );
+
                 } else {
                     $formBuilder->add(
                         $annotation->getName(),
