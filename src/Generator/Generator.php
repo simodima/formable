@@ -38,7 +38,7 @@ class Generator
         $reflectionObject = new \ReflectionClass($originalObject);
         $baseBuilder = $this->factory->createBuilder(
             'form',
-            $reflectionObject->newInstanceWithoutConstructor(),
+            $originalObject,
             array_merge(['data_class' => $reflectionObject->name], $options)
         );
 

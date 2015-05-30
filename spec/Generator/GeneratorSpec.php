@@ -26,17 +26,19 @@ class GeneratorSpec extends ObjectBehavior
     )
     {
         $this->beConstructedWith($reader, $factory);
+
+        $testDTO = new \stdClass();
+        $testDTO->name = 'name';
+        $testDTO->age  = 18;
+
         $factory->createBuilder(
             'form',
-            (new \ReflectionClass('stdClass'))->newInstanceWithoutConstructor(),
+            $testDTO,
             [
                 'data_class'      => 'stdClass'
             ]
         )->willReturn($formBuilder);
 
-        $testDTO = new \stdClass();
-        $testDTO->name = 'name';
-        $testDTO->age  = 18;
 
         $this->shouldThrow('Formable\Exception\FormGeneratorException')->duringGenerate($testDTO);
     }

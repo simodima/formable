@@ -76,8 +76,11 @@ class PublishPostCommand
 
 public function publishAction(Request $request)
 {
-    $form = $this->get('trt.formable')->generate(new PublishPostCommand);
-    $form->submit($request->request->all());
+    $publishCommand = new PublishPostCommand();
+    $publishCommand->date = new \DateTime('now');
+    
+    $form = $this->get('trt.formable')->generate($publishCommand);
+    $form->submit($request->request->all(), false /* Do not clear missing data */);
     
     if ($form->isValid()) {
         ...
