@@ -3,7 +3,10 @@
     "description": "The Symfony Form Generator",
     "type": "Bundle",
     "autoload": {
-        "psr-4" : { "Formable\\": "src", "spec\\Formable\\": "spec" }
+        "psr-4" : { "Formable\\": "src" }
+    },  
+    "autoload-dev": {
+        "psr-4" : { "spec\\Formable\\": "spec" }
     },
     "require": {
         "symfony/form": "^2.3",
