@@ -38,7 +38,7 @@ class GeneratorTest extends WebTestCase
     {
         static::bootKernel();
         $container = static::$kernel->getContainer();
-        $this->generator = $container->get('trt.formable');
+        $this->generator = $container->get('pugx.formable');
     }
 
     protected function tearDown()

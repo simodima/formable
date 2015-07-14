@@ -1,6 +1,6 @@
 {
-    "name": "trt/formable",
-    "description": "The Symfony Form Generator",
+    "name": "pugx/formable",
+    "description": "The PUGX Symfony Form Generator",
     "type": "Bundle",
     "autoload": {
         "psr-4" : { "Formable\\": "src" }
