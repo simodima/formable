@@ -63,6 +63,8 @@ class Generator
             /** @var Formable $annotation */
             $annotation = $this->reader->getPropertyAnnotation($reflectionProperty, $this->annotationClass);
 
+            $name = $annotation->getName() ?: $reflectionProperty->getName();
+
             if (null !== $annotation) {
                 ++$recognizedFields;
 
@@ -71,13 +73,13 @@ class Generator
                     $formBuilder->add(
                         $this->createFormBuilderForObject(
                             new \ReflectionClass($class),
-                            $formBuilder->create($annotation->getName(), null, ['compound' => true, 'data_class' => $class])
+                            $formBuilder->create($name, null, ['compound' => true, 'data_class' => $class])
                         )
                     );
 
                 } else {
                     $formBuilder->add(
-                        $annotation->getName(),
+                        $name,
                         $annotation->getDataType(),
                         array_merge($annotation->getOptions(), ['property_path' => $annotation->getName()])
                     );
