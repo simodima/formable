@@ -81,7 +81,7 @@ public function publishAction(Request $request)
     $publishCommand = new PublishPostCommand();
     $publishCommand->date = new \DateTime('now');
     
-    $form = $this->get('trt.formable')->generate($publishCommand);
+    $form = $this->get('pugx.formable')->generate($publishCommand);
     $form->submit($request->request->all(), false /* Do not clear missing data */);
     
     if ($form->isValid()) {
@@ -103,7 +103,7 @@ The `@Formable()` annotation follows the `Symfony\Component\Form\FormBuilderInte
 ```php
     /**
      * @Formable(name="date", dataType="date", options={
-     *   "format"= IntlDateFormatter::MEDIUM,
+     *   "format"= "yyyy-MM-dd",
      *   "days" = {1,2,3,4}
      * })
      */
@@ -112,7 +112,7 @@ The `@Formable()` annotation follows the `Symfony\Component\Form\FormBuilderInte
 
 ## Installation
  
-`composer require trt/formable`
+`composer require pugx/formable`
 
 ```php
 // Register the Bundle
