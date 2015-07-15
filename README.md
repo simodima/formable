@@ -1,3 +1,5 @@
+# This package is abandoned and no longer maintained. The author suggests using the https://github.com/PUGX/formable package instead.
+
 # Formable Symfony Bundle
 
 [![Latest Stable Version](https://poser.pugx.org/trt/formable/v/stable)](https://packagist.org/packages/trt/formable) [![Total Downloads](https://poser.pugx.org/trt/formable/downloads)](https://packagist.org/packages/trt/formable) [![Latest Unstable Version](https://poser.pugx.org/trt/formable/v/unstable)](https://packagist.org/packages/trt/formable) [![License](https://poser.pugx.org/trt/formable/license)](https://packagist.org/packages/trt/formable)
