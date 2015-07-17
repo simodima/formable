@@ -1,16 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: toretto
- * Date: 26/05/15
- * Time: 13:59
- */
 
 namespace Formable\Tests\Integration;
 
-
 use Formable\Generator\Generator;
-use Formable\Tests\Integration\DTOs\Collection\TestCollectionDTO;
 use Formable\Tests\Integration\DTOs\TestDoubleNestedDTO;
 use Formable\Tests\Integration\DTOs\TestMoneyDTO;
 use Formable\Tests\Integration\DTOs\TestNestedDTO;

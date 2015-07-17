@@ -11,9 +11,9 @@ use Symfony\Component\Form\FormFactory;
 
 class Generator
 {
+    const ANNOTATION_CLASS = 'Formable\\Definition\\Formable';
     private $reader;
     private $factory;
-    private $annotationClass = 'Formable\\Definition\\Formable';
 
     /**
      * @param Reader $reader
@@ -61,7 +61,7 @@ class Generator
 
         foreach ($reflectionObject->getProperties() as $reflectionProperty) {
             /** @var Formable $annotation */
-            $annotation = $this->reader->getPropertyAnnotation($reflectionProperty, $this->annotationClass);
+            $annotation = $this->reader->getPropertyAnnotation($reflectionProperty, static::ANNOTATION_CLASS);
 
             $name = $annotation->getName() ?: $reflectionProperty->getName();
 
